@@ -1,5 +1,8 @@
 package com.weiver.main.controller;
 
-public class MainController {
+import org.springframework.stereotype.Controller;
 
+@Controller
+public class MainController {
+	
 }
