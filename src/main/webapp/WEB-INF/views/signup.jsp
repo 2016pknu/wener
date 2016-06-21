@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="index, follow">
-        <title>Dlapak - General Listing Template</title>
+        <title>Wener - Sign in</title>
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:regular,700,600&amp;latin" type="text/css" />
         <!-- Essential styles -->
         <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" type="text/css">
@@ -38,7 +38,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="index.html" class="navbar-brand"><span class="logo"><i class="fa fa-recycle"></i> Dlapak</span></a>
+                        <a href="index.main" class="navbar-brand"><span class="logo"><i class="fa fa-recycle"></i> WENER</span></a>
                     </div>
 
                     <div class="navbar-collapse collapse">
@@ -93,34 +93,36 @@
                         <div class="col-sm-5 login-form">
                             <div class="panel panel-default">
                                 <div class="panel-intro text-center">
-                                    <h1 class="logo"><i class="fa fa-recycle"></i> Dlapak</h1>
+                                    <h1 class="logo"><i class="fa fa-recycle"></i> Wener</h1>
                                 </div>
                                 <div class="panel-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <input type="text" placeholder="Name" class="form-control input-lg">
+                                    <form action="/wener/signup.main" method="post">
+                                    	<div class="form-group">
+                                            <input type="text" placeholder="Email" class="form-control input-lg" id="email">
                                         </div>
+                                        
                                         <div class="form-group">
-                                            <input type="text" placeholder="Email" class="form-control input-lg">
+                                            <input type="text" placeholder="Name" class="form-control input-lg" id="name">
                                         </div>
+                                        
                                         <div class="form-group">
-                                            <input type="password" placeholder="Password" class="form-control input-lg">
+                                            <input type="password" placeholder="Password" class="form-control input-lg" id="password">
                                         </div>
+<!--                                         <div class="form-group"> -->
+<!--                                             <div class="checkbox"> -->
+<!--                                                 <label for="terms" class="string optional"> -->
+<!--                                                     <input type="checkbox" style="" id="terms"> -->
+<!--                                                     I Agree with Term and Conditions -->
+<!--                                                 </label> -->
+<!--                                             </div> -->
+<!--                                         </div> -->
                                         <div class="form-group">
-                                            <div class="checkbox">
-                                                <label for="terms" class="string optional">
-                                                    <input type="checkbox" style="" id="terms">
-                                                    I Agree with Term and Conditions
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <button class="btn btn-block btn-custom">Sign Up</button>
+                                            <button type="submit" class="btn btn-block btn-custom">회원가입</button>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="panel-footer">
-                                    <p class="text-center pull-right"> <a href="login.html"> Have an account? </a> </p>
+                                    <p class="text-center pull-right"> <a href="login.main"> Have an account? </a> </p>
                                     <div style=" clear:both"></div>
                                 </div>
                             </div>
