@@ -39,7 +39,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="index.main" class="navbar-brand"><span class="logo"><i class="fa fa-recycle"></i> WENER</span></a>
+                        <a href="index.main" class="navbar-brand"><span class="logo"><i class="fa fa-shopping-basket"></i> WENER</span></a>
                     </div>
 
                     <div class="navbar-collapse collapse">
@@ -140,8 +140,8 @@
                                 </div>
                                 <div class="col-xs-4 col-sm-3">
                                     <div class="shortcut">
-                                        <a href="category.html"><i class="fa fa-home shortcut-icon icon-brown"></i></a>
-                                        <a href="category.html"><h3>Property</h3></a>
+                                        <a href="category.html"><i class="fa fa-briefcase shortcut-icon icon-brown"></i></a>
+                                        <a href="category.html"><h3>패션잡화</h3></a>
                                         <span class="total-items">252,546</span>
                                     </div>
                                 </div>
