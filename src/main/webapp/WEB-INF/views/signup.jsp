@@ -96,18 +96,24 @@
                                     <h1 class="logo"><i class="fa fa-recycle"></i> Wener</h1>
                                 </div>
                                 <div class="panel-body">
-                                    <form action="/wener/signup.main" method="post">
+                                    <form action="/wener/signup.member" method="post">
                                     	<div class="form-group">
-                                            <input type="text" placeholder="Email" class="form-control input-lg" id="email">
+                                            <input type="text" placeholder="ID" class="form-control input-lg" name="id">
                                         </div>
                                         
                                         <div class="form-group">
-                                            <input type="text" placeholder="Name" class="form-control input-lg" id="name">
+                                            <input type="password" placeholder="Password" class="form-control input-lg" name="password">
                                         </div>
                                         
                                         <div class="form-group">
-                                            <input type="password" placeholder="Password" class="form-control input-lg" id="password">
+                                            <input type="password" placeholder="Password Check" class="form-control input-lg" name="passwordCheck">
                                         </div>
+                                        
+                                    	<div class="form-group">
+                                            <input type="email" placeholder="Email" class="form-control input-lg" name="email">
+                                        </div>
+                                        
+                                        
 <!--                                         <div class="form-group"> -->
 <!--                                             <div class="checkbox"> -->
 <!--                                                 <label for="terms" class="string optional"> -->

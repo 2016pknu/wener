@@ -15,13 +15,16 @@
   <welcome-file-list>
     <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
   </welcome-file-list>
+  
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:/spring/root-context.xml</param-value>
   </context-param>
+  
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  
   <servlet>
     <servlet-name>appServlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -34,5 +37,33 @@
   <servlet-mapping>
     <servlet-name>appServlet</servlet-name>
     <url-pattern>*.main</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+    <servlet-name>authServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:/spring/auth-context.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>authServlet</servlet-name>
+    <url-pattern>*.auth</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>memberServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:/spring/member-context.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>memberServlet</servlet-name>
+    <url-pattern>*.member</url-pattern>
   </servlet-mapping>
 </web-app>
