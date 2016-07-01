@@ -115,7 +115,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <button class="btn btn-block btn-custom">Sign In</button>
+                                            <button class="btn btn-block btn-custom">로그인</button>
                                         </div>
                                     </form>
                                 </div>

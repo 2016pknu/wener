@@ -10,5 +10,6 @@ public interface MemberDao {
 	void signUp(MemberDto member);
 	String selectId(String inputId);
 	String selectPassword(String id);
+	MemberDto getProfile(String id);
 
 }

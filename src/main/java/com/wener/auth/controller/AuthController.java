@@ -13,6 +13,6 @@ public class AuthController {
 	@Autowired
 	AuthService authService;
 	
-
+	
 
 }

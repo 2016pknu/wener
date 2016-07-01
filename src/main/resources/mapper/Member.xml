@@ -21,7 +21,16 @@
 		WHERE MEMBER_ID = #{inputId}
 	</select>
 	
-
+	<select id="getProfile" parameterType="string" resultType="memberDto">
+		SELECT  MEMBER_ID AS id,
+				MEMBER_PASSWORD AS password,
+				MEMBER_EMAIL AS email,
+				MEMBER_NAME AS name,
+				MEMBER_PHONE AS phone,
+				MEMBER_ADDRESS AS address
+		FROM MEMBER
+		WHERE MEMBER_ID = #{id}
+	</select>
 
 
 	

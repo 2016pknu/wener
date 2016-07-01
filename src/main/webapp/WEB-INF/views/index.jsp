@@ -44,7 +44,7 @@
 
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="new-ads"><a href="account_create_post.html" class="btn btn-ads btn-block">Advertise</a></li>
+                            <li class="new-ads"><a href="account_create_post.html" class="btn btn-ads btn-block">글 쓰기</a></li>
                             <c:if test="${id == null}">
                            		<li><a href="signup.member">회원가입</a></li>
 	                            <li class="dropdown">
@@ -81,9 +81,9 @@
 	                            <li class="dropdown">
 	                                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><strong class="caret"></strong>&nbsp;My Pages</a>
 	                                <ul class="dropdown-menu">
-	                                    <li><a href="account_posts.html">My Ads</a></li>
-	                                    <li><a href="account_create_post.html">Create Ads</a></li>
-	                                    <li><a href="account_profile.html">My Profile</a></li>
+	                                	<li><a href="account_create_post.member"><i class="fa fa-plus"></i> 글쓰기</a></li>
+	                                    <li><a href="account_posts.member"><i class="fa fa-folder-o"></i> 내가 쓴 글</a></li>
+	                                    <li><a href="account_profile.member"><i class="fa fa-user"></i> 내 프로필</a></li>
 	                                    <li><a href="logout.member"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
 	                                </ul>
 	                            </li>
@@ -99,15 +99,15 @@
                     <div class="row hero-search-box">
                         <form>
                             <div class="col-md-4 col-sm-4 search-input">
-                                <input type="text" class="form-control input-lg search-first" placeholder="검색">
-                            </div>
-                            <div class="col-md-4 col-sm-4 search-input">
                                         <select class="form-control input-lg search-second">
                                             <option selected="">카테고리</option>
                                             <option>자동차</option>
                                             <option>휴대폰</option>
                                             <option>맛집</option>
                                         </select>
+                            </div>
+                            <div class="col-md-4 col-sm-4 search-input">
+                                <input type="text" class="form-control input-lg search-first" placeholder="검색">
                             </div>
                             <div class="col-md-4 col-sm-4 search-input">
                                 <button class="btn btn-custom btn-block btn-lg"><i class="fa fa-search"></i></button>
@@ -358,32 +358,23 @@
                             <div class="widget">
                             	<c:if test="${id==null}">
                                 <div class="widget-header">
-                                    <h3>Quick Signup</h3>
                                 </div>
                                 <div class="widget-body">
-                                    <form >
-                                        <div class="form-group">
-                                            <input type="text" class="form-control input-lg" placeholder="ID">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control input-lg" placeholder="Email">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control input-lg" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control input-lg" placeholder="Check Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="checkbox">
-                                                <label class="string optional" for="terms">
-                                                    <input type="checkbox" id="terms" style="">
-                                                    <a href="#">I Agree with Term and Conditions</a>
-                                                </label>
+                                    <form action="/wener/login.member" method="post">
+                                       <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon addon-login"><i class="fa fa-user"></i></span>
+                                                <input type="text" placeholder="ID" required="required" class="form-control input-login" name="id">                                            
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <button class="btn btn-block btn-custom">Sign Up</button>
+                                            <div class="input-group">
+                                                <span class="input-group-addon addon-login"><i class="addon fa fa-lock"></i></span>
+                                                <input type="password" placeholder="Password" required="required" class="form-control input-login" name="password">                                            
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-block btn-custom">로그인</button>
                                         </div>
                                     </form>
                                 </div>
