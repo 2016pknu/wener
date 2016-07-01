@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="index, follow">
-        <title>Dlapak - General Listing Template</title>
+        <title>Wener - login</title>
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:regular,700,600&amp;latin" type="text/css" />
         <!-- Essential styles -->
         <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" type="text/css">
@@ -44,44 +44,49 @@
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="new-ads"><a href="account_create_post.html" class="btn btn-ads btn-block">Advertise</a></li>
-                            <li><a href="signup.html">Signup</a></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><strong class="caret"></strong>&nbsp;Pages</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="account_posts.html">My Ads</a></li>
-                                    <li><a href="account_create_post.html">Create Ads</a></li>
-                                    <li><a href="account_profile.html">My Profile</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-user"></i> <strong class="caret"></strong>&nbsp;</a>
-                                <div class="dropdown-menu dropdown-login" style="padding:15px;min-width:250px">
-                                    <form>                       
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <span class="input-group-addon addon-login"><i class="fa fa-user"></i></span>
-                                                <input type="text" placeholder="Username or email" required="required" class="form-control input-login">                                            
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <span class="input-group-addon addon-login"><i class="addon fa fa-lock"></i></span>
-                                                <input type="password" placeholder="Password" required="required" class="form-control input-login">                                            
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="checkbox">
-                                                <label class="string optional" for="user_remember_me">
-                                                    <input type="checkbox" id="user_remember_me" style="">
-                                                    Remember me
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <input type="submit" class="btn btn-custom btn-block" value="Sign In">
-                                        <a href="forgot_password.html" class="text-center btn-block">Forgot password?</a>
-                                    </form>                                    
-                                </div>
-                            </li>
+                           	<c:if test="${id == null}">
+                           		<li><a href="signup.member">회원가입</a></li>
+	                            <li class="dropdown">
+	                                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-user"></i> <strong class="caret"></strong>&nbsp;</a>
+	                                <div class="dropdown-menu dropdown-login" style="padding:15px;min-width:250px">
+	                                    <form action="/wener/login.member" method="post">                       
+	                                        <div class="form-group">
+	                                            <div class="input-group">
+	                                                <span class="input-group-addon addon-login"><i class="fa fa-user"></i></span>
+	                                                <input type="text" placeholder="ID" required="required" class="form-control input-login" name="id">                                            
+	                                            </div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <div class="input-group">
+	                                                <span class="input-group-addon addon-login"><i class="addon fa fa-lock"></i></span>
+	                                                <input type="password" placeholder="Password" required="required" class="form-control input-login" name="password">                                            
+	                                            </div>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <div class="checkbox">
+	                                                <label class="string optional" for="user_remember_me">
+	                                                    <input type="checkbox" id="user_remember_me" style="">
+	                                                    Remember me
+	                                                </label>
+	                                            </div>
+	                                        </div>
+	                                        <input type="submit" class="btn btn-custom btn-block" value="Sign In">
+	                                        <a href="forgot_password.member" class="text-center btn-block">아이디 또는 비밀번호를 잊어버리셨나요?</a>
+	                                    </form>                                                       
+	                                </div>
+	                            </li>
+                            </c:if>
+                            <c:if test="${id != null}">
+	                            <li class="dropdown">
+	                                <a class="dropdown-toggle" href="#" data-toggle="dropdown"><strong class="caret"></strong>&nbsp;My Pages</a>
+	                                <ul class="dropdown-menu">
+	                                    <li><a href="account_posts.html">My Ads</a></li>
+	                                    <li><a href="account_create_post.html">Create Ads</a></li>
+	                                    <li><a href="account_profile.html">My Profile</a></li>
+	                                    <li><a href="logout.member"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
+	                                </ul>
+	                            </li>
+                            </c:if>
 
                         </ul>
                     </div>
@@ -93,15 +98,21 @@
                         <div class="col-sm-5 login-form">
                             <div class="panel panel-default">
                                 <div class="panel-intro text-center">
-                                    <h1 class="logo"><i class="fa fa-recycle"></i> Dlapak</h1>
+                                    <h1 class="logo"><i class="fa fa-recycle"></i> Wener</h1>
                                 </div>
                                 <div class="panel-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <input type="text" placeholder="Email or Username" class="form-control input-lg">
+                                     <form action="/wener/login.member" method="post">
+                                       <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon addon-login"><i class="fa fa-user"></i></span>
+                                                <input type="text" placeholder="ID" required="required" class="form-control input-login" name="id">                                            
+                                            </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" placeholder="Password" class="form-control input-lg">
+                                            <div class="input-group">
+                                                <span class="input-group-addon addon-login"><i class="addon fa fa-lock"></i></span>
+                                                <input type="password" placeholder="Password" required="required" class="form-control input-login" name="password">                                            
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <button class="btn btn-block btn-custom">Sign In</button>
@@ -114,7 +125,7 @@
                                             <input type="checkbox" style="" id="terms">Remember me
                                         </label>
                                     </div>
-                                    <p class="text-center pull-right"> <a href="forgot_password.html"> Forgot password? </a> </p>
+                                    <p class="text-center pull-right"> <a href="forgot_password.html"> 아이디 또는 비밀번호를 잊어버리셨나요? </a> </p>
                                     <div style=" clear:both"></div>
                                 </div>
                             </div>

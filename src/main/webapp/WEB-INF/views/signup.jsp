@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -25,7 +25,9 @@
 
         <!-- JS Library -->
         <script src="resources/js/jquery.js"></script>
-
+    	<script src="resources/js/joinMember.js"></script>
+    	<script src="resources/js/passwordCheck.js"></script>
+    	
     </head>
     <body>
         <div class="wrapper">
@@ -98,16 +100,18 @@
                                 <div class="panel-body">
                                     <form action="/wener/signup.member" method="post">
                                     	<div class="form-group">
-                                            <input type="text" placeholder="ID" class="form-control input-lg" name="id">
+                                            <input type="text" placeholder="ID" class="form-control input-lg" name="id" id="id">
+                                        </div>
+                                        <div id="idCheckStatus"></div>
+                                        <div class="form-group">
+                                            <input type="password" placeholder="Password" class="form-control input-lg" name="password" id="password">
                                         </div>
                                         
                                         <div class="form-group">
-                                            <input type="password" placeholder="Password" class="form-control input-lg" name="password">
+                                            <input type="password" placeholder="Password Check" class="form-control input-lg" name="passwordCheck" id="passwordCheck">
                                         </div>
                                         
-                                        <div class="form-group">
-                                            <input type="password" placeholder="Password Check" class="form-control input-lg" name="passwordCheck">
-                                        </div>
+                                        <div id="pwCheckStatus"></div>
                                         
                                     	<div class="form-group">
                                             <input type="email" placeholder="Email" class="form-control input-lg" name="email">
@@ -128,7 +132,7 @@
                                     </form>
                                 </div>
                                 <div class="panel-footer">
-                                    <p class="text-center pull-right"> <a href="login.main"> Have an account? </a> </p>
+                                    <p class="text-center pull-right"> <a href="login.member"> 이미 가입하셨나요? </a> </p>
                                     <div style=" clear:both"></div>
                                 </div>
                             </div>
@@ -183,5 +187,6 @@
                 });
             });
         </script>
+
     </body>
 </html>

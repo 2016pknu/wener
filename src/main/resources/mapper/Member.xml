@@ -4,13 +4,13 @@
 
 <mapper namespace="com.wener.member.dao.MemberDao">
 	
-	<insert id="insertMember" parameterType="memberDto">
+	<insert id="signUp" parameterType="memberDto">
 		INSERT INTO MEMBER
-		VALUES(member_seq.nextval, #{member_id}, #{member_pw}, #{member_name}, #{member_email}, #{member_sex}, #{member_birth}, sysdate, 0, #{member_memo}, null, null, null, null)
+		VALUES(#{id}, #{password}, #{email})
 	</insert>
 	
 	<select id="selectPassword" parameterType="string" resultType="string">
-		SELECT MEMBER_PW
+		SELECT MEMBER_PASSWORD
 		FROM MEMBER
 		WHERE MEMBER_ID = #{id}
 	</select>
@@ -21,23 +21,7 @@
 		WHERE MEMBER_ID = #{inputId}
 	</select>
 	
-	<select id="userProfile" parameterType="String" resultType="memberDto">
-		SELECT *
-		FROM MEMBER
-		WHERE MEMBER_ID=#{id}
-	</select>
-	
-	<update id="profileUpdate" parameterType="memberDto">
-		UPDATE MEMBER
-		SET 
-<!-- 		<if test="#{member_pw}!='null'"> -->
-		member_pw = #{member_pw},
-<!-- 		</if> -->
-		member_nickname = #{member_nickname},
-		member_phonenumber = #{member_phonenumber}, member_email = #{member_email},
-		member_birth = #{member_birth}, member_memo = #{member_memo}
-		WHERE MEMBER_ID = #{member_id}
-	</update>
+
 
 
 	

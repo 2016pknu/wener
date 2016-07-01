@@ -21,5 +21,15 @@ public class MainController {
 		return jsp;
 	}
 	
+	@RequestMapping("/contact.main")
+	public String contact(){
+		
+		return "contact";
+	}
+	@RequestMapping("/about.main")
+	public String about(){
+		
+		return "about";
+	}
 
 }
